@@ -1,3 +1,17 @@
+document.getElementById('issueInputForm').addEventListener('submit', saveIssue);
+
+function saveIssue(e){
+  var issueDesc = document.getElementById('issueDescInput').value;
+  /*generate an id with the chance library   Return a global identifier*/
+  var issueId = chance.guid();
+
+  var issue = {
+    id: issueId,
+    description: issueDesc
+  }
+
+}
+
 function fetchIssues() {
   var issues = JSON.parse(localStorage.getItem('issues'));
   var issuesList = document.getElementById('issuesList')
