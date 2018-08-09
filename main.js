@@ -37,7 +37,7 @@ function saveIssue(e){
 
 function fetchIssues() {
   var issues = JSON.parse(localStorage.getItem('issues'));
-  var issuesList = document.getElementById('issuesList')
+  var issuesListe = document.getElementById('issuesList')
 
  /* Initialize of the content*/
   issuesList.innerHTML = '' ;
