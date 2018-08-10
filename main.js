@@ -34,7 +34,21 @@ function saveIssue(e){
   /*to prevent the form for submiting*/
   e.preventDefault();
 }
+function setStatusClosed(id){
+  var issues = JSON.parse(localStorage.getItem('issues'));
 
+  for (var i = 0; i < issues.length; i++) {
+    if (issues[i].id ==id){
+      issues[i].status = 'closed';
+    }
+  }
+  /*update localStorage*/
+  localStorage.setItem('issues', JSON.stringify(issues));
+
+  /*update output*/
+  fetchIssues();
+
+}
 function fetchIssues() {
   var issues = JSON.parse(localStorage.getItem('issues'));
   var issuesListe = document.getElementById('issuesList')
